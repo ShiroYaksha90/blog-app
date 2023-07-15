@@ -52,12 +52,13 @@ RSpec.describe Post, type: :model do
   end
 
   it 'fetch the last five comments for the post' do
-    user = User.create!(name: 'Basim', photo: 'https://images.app.goo.gl/myphSgUZVGsHqcsk8', bio: 'Software engineer', posts_counter: 6)
+    user = User.create!(name: 'Basim', photo: 'https://images.app.goo.gl/myphSgUZVGsHqcsk8', bio: 'Software engineer',
+                        posts_counter: 6)
 
     post = user.posts.create!(title: 'first post', text: 'this is the first post', comments_counter: 3,
                               likes_counter: 2)
 
-    c1 = post.comments.create!(author_id: user.id, text: 'First comment')
+    post.comments.create!(author_id: user.id, text: 'First comment')
     c2 = post.comments.create!(author_id: user.id, text: 'Second comment')
     c3 = post.comments.create!(author_id: user.id, text: 'Third comment')
     c4 = post.comments.create!(author_id: user.id, text: 'Fourth comment')

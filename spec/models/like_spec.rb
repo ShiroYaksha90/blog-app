@@ -12,9 +12,9 @@ RSpec.describe Like, type: :model do
   end
 
   it '#update_likes_counter' do
-  post = Post.create(author_id: 1, title: 'Hello', text: 'Hello This is my first post', likes_counter: 1)
-  Like.create(author_id: 1, post_id: post.id)
+    post = Post.create(author_id: 1, title: 'Hello', text: 'Hello This is my first post', likes_counter: 1)
+    Like.create(author_id: 1, post_id: post.id)
 
-  expect(post.likes_counter).to eql 1
+    expect(post.likes_counter).to eql 1
   end
 end

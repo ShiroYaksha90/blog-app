@@ -19,7 +19,8 @@ RSpec.describe Comment, type: :model do
   end
 
   it '#update_comments_counter' do
-    User.new(name: 'Basim', photo: 'https://images.app.goo.gl/myphSgUZVGsHqcsk8', bio: 'Software engineer', posts_counter: 5)
+    User.new(name: 'Basim', photo: 'https://images.app.goo.gl/myphSgUZVGsHqcsk8', bio: 'Software engineer',
+             posts_counter: 5)
 
     post = Post.new(author_id: 1, title: 'Hello', text: 'Hello this is my first post', comments_counter: 3,
                     likes_counter: 2)
