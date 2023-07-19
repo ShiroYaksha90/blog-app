@@ -1,17 +1,15 @@
 class PostsController < ApplicationController
-    before_action :set_posts, only: [:show]
+  before_action :set_posts, only: [:show]
 
-    def index
-        @posts = Post.all
-    end
+  def index
+    @posts = Post.all
+  end
 
-    def show
-        
-    end
+  def show; end
 
-    private
+  private
 
-    def set_posts
-        @post = Post.find(params[:id])
-    end
+  def set_posts
+    @post = Post.find(params[:id])
+  end
 end
