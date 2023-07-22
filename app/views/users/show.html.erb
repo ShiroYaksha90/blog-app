@@ -1,1 +1,6 @@
-<h1>User details</h1>
+<%= render 'shared/user-card', user: @user %>
+<div class = "user-details"> <div class = 'bio-card'><h3>Bio</h3><p><%= @user.bio%></p></div>
+<%@user.recent_three_posts.each do |post|%>
+<li class = 'post-container'><h3><%= link_to post.title, user_post_path(@user,post)%></h3> <div class="post-details"><p><%= post.text%></p> <p class = "counters">comments:<%= post.comments_counter%> likes:<%= post.likes_counter%></p></div> </li>
+<%end%>
+<%= link_to "See all posts", user_posts_path(@user),  class: "btn" %></div>
