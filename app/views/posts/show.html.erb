@@ -1,1 +1,22 @@
-<h1>Post details</h1>
+<%= render 'shared/header'%>
+<div class="post-card">
+  <div class="my-post">
+    <h2><%= @post.title %></h2>
+    <div class="post-counters">
+      <p>Number of comments: <%= @post.comments_counter %></p>
+      <p>Number of likes: <%= @post.likes_counter %></p>
+    </div>
+  </div>
+  <div class="post">
+    <p><%= @post.text %></p>
+  </div>
+</div>
+ <div class="comments">
+  <% if @post.comments.empty? %>
+    <p>No comments yet!</p>
+  <% else %>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.text %></p>
+    <% end %>
+    <% end %>
+  </div>
