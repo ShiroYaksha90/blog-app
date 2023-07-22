@@ -1,1 +1,11 @@
-<h1>Hello, the posts will be listed here ...</h1>
+<%= render 'shared/header'%>
+<%= render 'shared/user-card', user: @user %>
+<div class = 'posts-container'><%@user.recent_three_posts.each do |post|%>
+<li class = 'post-container'><h3><%= link_to post.title, user_post_path(@user,post)%></h3> <div class="post-details"><p><%= post.text%></p> <p class = "counters">comments:<%= post.comments_counter%> likes:<%= post.likes_counter%></p></div> </li>
+          <ul class = 'comments-container'><% if post.comments.empty? %>
+            <p>No comments yet!</p>
+          <% else %>
+                <%= render 'shared/comment-card', post: post %>
+              
+<%end%></ul>
+<%end%></div>
