@@ -1,0 +1,4 @@
+
+<% post.recent_comments.each do |comment|%>
+<%= comment.author.name%>: <%= comment.text%> <br>
+<%end%>
