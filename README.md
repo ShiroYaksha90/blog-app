@@ -23,16 +23,27 @@ The Blog app is a classic example of a blog website. It's a fully functional web
 
 ## 🛠️ Built With <a name="built-with"></a>
 ### Tech Stack
-<details><summary>Client</summary>
-<ul>
-  <li><a href="https://html.com/">HTML</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-</ul>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML, CSS</li>
+    <li>JavaScript</li>
+  </ul>
 </details>
-<details><summary>Backend</summary>
-<ul>
-  <li><a href='https://rubyonrails.org/'>Rails</a></li>
-</ul>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li>Ruby on Rails</li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
 </details>
 
 ### Key Features
@@ -51,25 +62,65 @@ The Blog app is a classic example of a blog website. It's a fully functional web
 ## :computer: Getting Started <a name="getting-started"></a>
 To get a local copy up and running, follow these steps.<br>
 
+To get a local copy up and running, follow these steps.
+
 ### Prerequisites
 
 In order to run this project you need:
-- [Rails](https://rubyonrails.org/) installed on your machine
-- Text editor
+
+- Install Ruby
+- Install Rails
+- Install Postgresql
 
 ### Setup
 
-Clone this repository to your desired folder:<br>
-```
-git clone https://github.com/ShiroYaksha90/Blog-app.git
+Clone this repository to your desired folder:
+
+```sh
+  cd Blog_app
+  git clone https://github.com/ShiroYaksha90/Blog_app.git
 ```
 
 ### Install
 
-Install this project with:<br>
+Install this project with:
+
+```sh
+  cd Blog_app
+  bundle install
 ```
-bundle install
+```sh
+  gem install rspec
 ```
+```sh
+  gem install --no-document rubocop -v '>= 1.0, < 2.0' # https://docs.rubocop.org/en/stable/installation/
+```
+```sh
+  npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rubocop --color
+```
+```sh
+  npx stylelint "**/*.{css,scss}"
+```
+```sh
+  rspec
+```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,6 +129,12 @@ bundle install
 - GitHub: [@Basim-Aljazaeri](https://github.com/Shiroyaksha90)
 - Twitter: [@Basim_AlJazaeri](https://twitter.com/Basim_AlJazaeri)
 - LinkedIn: [Basim Aljazaeri](https://www.linkedin.com/in/basim-aljazaeri-603682201/)
+
+👤 **Riyaz Ahmed**
+
+- GitHub: [@gitHubhandle](https://github.com/r-ahmed2022)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/riyazahmedmicroverse/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
