@@ -1,7 +1,7 @@
 <%= render 'shared/header'%>
 <div class="post-card">
   <div class="my-post">
-    <h2><%= @post.title %></h2>
+    <h2><%=@post.author.name%><%= @post.title %></h2>
     <div class="post-counters">
       <p>Number of comments: <%= @post.comments_counter %></p>
       <p>Number of likes: <%= @post.likes_counter %></p>
@@ -16,7 +16,7 @@
     <p>No comments yet!</p>
   <% else %>
     <% @post.comments.each do |comment| %>
-    <p><%= comment.text %></p>
+    <p><%= comment.author.name%><%= comment.text %></p>
     <% end %>
     <% end %>
   </div>
