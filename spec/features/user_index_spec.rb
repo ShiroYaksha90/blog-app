@@ -3,7 +3,7 @@ RSpec.describe 'User index page', type: :feature do
   context 'when there are users' do
     before :each do
       @user1 = User.create(name: 'Riyaz Ali', photo: 'riyaz.jpg', bio: 'The developer',
-        posts_counter: 0)
+                           posts_counter: 0)
       visit root_path
     end
 

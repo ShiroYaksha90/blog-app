@@ -43,7 +43,7 @@ describe 'User show page', type: :feature do
     expect(page).to have_current_path(user_post_path(@user, @post2))
   end
 
- 
+
   it 'redirects to the posts index page of the user when one clicks the see all posts button' do
     click_link 'See all posts'
     expect(page).to have_current_path(user_posts_path(@user))
