@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe 'User show page', type: :feature do
   before :each do
-    @user = User.create(name: 'Basim', photo: 'basim.jpg', bio: 'Software developer', posts_counter: 2)
+    @user = User.create(name: 'Basim', photo: 'basim.jpg', bio: 'Software developer')
     @post1 = Post.create(author: @user, title: 'third blog', text: 'Rocking with the blogs')
     @post2 = Post.create(author: @user, title: 'rails testing', text: 'Learning in progress')
 
