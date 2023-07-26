@@ -11,7 +11,25 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
+     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <% if user_signed_in? %>
+                        <li class="nav-item ">
+                            <%= link_to current_user.email, edit_user_registration_path, class:'nav-link text-white mx-3 my-auto' %>
+                        </li>  
+                        <li class="nav-item active">
+                            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class:'nav-link text-white mx-3 my-auto' %>
+                        </li>  
+                      <% else %> 
+                        <li class="nav-item">
+                            <%= link_to 'Sign Up', new_user_registration_path, class:'nav-link text-white mx-3 my-auto' %>
+                        </li>  
+                     
+                     <li class="nav-item">
+                        <%= link_to 'Sign In', new_user_session_path, class:'nav-link text-white mx-3 my-auto' %>
+                    </li>   
+                  <% end %>   
+        </ul>
+     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
