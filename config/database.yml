@@ -60,7 +60,7 @@ test:
   database: blog_app
   username: postgres
   password: 1234
-  port: 3
+  port: 5433
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
