@@ -1,4 +1,3 @@
-<%= render 'shared/header'%>
 <%= render 'shared/user-card', user: @user %>
 <div class = 'posts-container'><%@user.recent_three_posts.each do |post|%>
   <li class = 'post-container'><h3><%= post.author.name%>: <%= link_to "#{post.title}", user_post_path(@user,post)%></h3>
