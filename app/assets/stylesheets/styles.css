@@ -168,3 +168,12 @@ body {
   padding: 4px;
   width: 100%;
 }
+
+.comment-container {
+  margin-top: 2%;
+}
+
+.delete-btn {
+  margin: 10px 0;
+  width: auto;
+}
