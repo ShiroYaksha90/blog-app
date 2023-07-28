@@ -1,6 +1,6 @@
 <div class="post-card">
   <div class="my-post">
-    <h2><%=@post.author.name%><%= @post.title %></h2>
+    <h2><%=@post.author.name%>: <%= @post.title %></h2>
     <div class="post-counters">
       <p>Number of comments: <%= @post.comments_counter %></p>
       <p>Number of likes: <%= @post.likes_counter %></p>
@@ -9,13 +9,23 @@
   <div class="post">
     <p><%= @post.text %></p>
   </div>
+  <div class="d-flex align-items-center justify-content-evenly w-50 comment-container">
+      <%= link_to 'Comment', new_user_post_comment_path(@post.author, @post), class: 'btn' %>
+      <% if can? :destroy || :manage, @post %>
+        <%= button_to 'Delete', user_post_path(@user, @post.id), method: :delete, class: 'btn delete-btn' %>
+      <%end%>
+    </div>
 </div>
  <div class="comments">
   <% if @post.comments.empty? %>
     <p>No comments yet!</p>
   <% else %>
     <% @post.comments.each do |comment| %>
-    <p><%= comment.author.name%><%= comment.text %></p>
+    <p>
+      <%= comment.author.name%>: <%= comment.text %><% if current_user == comment.author %>
+        <%= button_to "Delete comment", user_post_comment_path(comment.post.author, comment.post, comment), method: :delete, class: "btn delete-btn" %>
+      <% end %>
+    </p> 
     <% end %>
     <% end %>
   </div>

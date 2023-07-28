@@ -1,6 +1,6 @@
-<h1>Create a New Comment</h1>
+<h3>Create a New Comment</h3>
 
-<%= form_with(model: @comment, url: user_post_comments_path(user_id: @current_user.id, post_id: @post.id), local: true) do |form| %>
+<%= form_with model: @comment, url: user_post_comments_path(@post.author,  @post) do |form| %>
   <div>
     <%= form.label :text %>
     <%= form.text_area :text %>
