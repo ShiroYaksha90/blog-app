@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      flash[:notice] = "Post was successfully created"
+      flash[:notice] = 'Post was successfully created'
       redirect_to user_posts_path(current_user, @post), notice: 'Post was successfully created.'
     else
       render :new
@@ -30,23 +30,25 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-   def destroy
-     set_post
-     @post.comments.destroy_all
-     @post.likes.destroy_all
-     if @post.destroy
-       flash[:notice] = 'Post was deleted successfully.'
-       redirect_to user_posts_path
-     else
-       render 'Error', status: unprocessable_entity
-     end
-   end
-   private
-   def set_post
-     @user = User.find(params[:user_id])
-     @post = @user.posts.find(params[:id])
-     @comments = @post.comments
-   end
+  def destroy
+    set_post
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+    if @post.destroy
+      flash[:notice] = 'Post was deleted successfully.'
+      redirect_to user_posts_path
+    else
+      render 'Error', status: unprocessable_entity
+    end
+  end
+
+  private
+
+  def set_post
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @comments = @post.comments
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)
