@@ -119,6 +119,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
     language_server-protocol (3.17.0.3)
     loofah (2.21.3)
@@ -218,6 +220,16 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag-api (2.10.1)
+      railties (>= 3.1, < 7.1)
+    rswag-specs (2.10.1)
+      activesupport (>= 3.1, < 7.1)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.1)
+      rspec-core (>= 2.14)
+    rswag-ui (2.10.1)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubocop (1.54.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -293,6 +305,9 @@ DEPENDENCIES
   rails (~> 7.0.6)
   rails-controller-testing
   rspec-rails (~> 6.0.0)
+  rswag-api
+  rswag-specs
+  rswag-ui
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
@@ -303,7 +318,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.10
