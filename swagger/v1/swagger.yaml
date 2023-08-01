@@ -58,6 +58,19 @@ paths:
       responses:
         '200':
           description: successful
+  "/api/v1/users/{user_id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list posts
+      responses:
+        '200':
+          description: successful
 servers:
 - url: https://{defaultHost}
   variables:
